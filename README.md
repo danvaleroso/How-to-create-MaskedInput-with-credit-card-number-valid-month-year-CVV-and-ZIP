@@ -2,7 +2,7 @@
 A repository template for creating new examples.
 -->
 
-# Product/Platform - Task
+# MaskedInput for Blazor - How to create MaskedInput with credit card number, valid month/year, CVV and ZIP
 
 The description in a free form.
 
@@ -18,9 +18,9 @@ Implementation details: steps, code snippets, and other technical information in
 - link.js
 - ...
 
-<!-- default file list end --> 
+<!-- default file list end -->
 
-<!-- 
+<!--
 
 ## Documentation
 
