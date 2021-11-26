@@ -10,6 +10,8 @@ sample image .
 
 The main idea is to use multiple MaskedInputs for Card number, valid month/year, CVV and ZIP. Then remove their borders and put them inside a div container.
 
+# Razor
+
 ```razor
 <div class="inputContainer" >
     <div>
@@ -48,6 +50,8 @@ The main idea is to use multiple MaskedInputs for Card number, valid month/year,
     int? ZIP { get; set; }
 }
 ```
+# CSS
+
 ```css
 .no-border {
     border: 0 !important;
