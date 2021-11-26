@@ -4,7 +4,7 @@ A repository template for creating new examples.
 
 # MaskedInput for Blazor - How to create MaskedInput with credit card number, valid month/year, CVV and ZIP
 
-Here is an example of how to use MaskedInput component to show a large input with credit card number, valid month/year, CVV and ZIP as shown below.
+Here is an example of how to use MaskedInput component to show a large input with credit card number, valid month/year, CVV and ZIP as shown below:
 
 ![alt text](https://github.com/dlvaleroso98/How-to-create-MaskedInput-with-credit-card-number-valid-month-year-CVV-and-ZIP/blob/21.2.3%2B/Clipboard-File-1.png)
 
