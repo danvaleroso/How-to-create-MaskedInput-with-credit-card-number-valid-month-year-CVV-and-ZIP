@@ -28,11 +28,11 @@ The main idea is to use multiple MaskedInputs for Card number, valid month/year,
                        NullText="MM/YY"
                        CssClass="widthSm">
         </DxMaskedInput>
-        <DxMaskedInput @bind-Value="@CVC"
+        <DxMaskedInput @bind-Value="@CVV"
                        InputCssClass="no-border"
                        Mask="000" 
                        CssClass="widthSm"
-                       NullText="CVC">
+                       NullText="CVV">
         </DxMaskedInput>
         <DxMaskedInput @bind-Value="@ZIP"
                        InputCssClass="no-border"
@@ -46,7 +46,7 @@ The main idea is to use multiple MaskedInputs for Card number, valid month/year,
     DateTime? Date { get; set; } = null;
     string DateTimeMaskValue = "MM/yy";
     int? CardNumber { get; set; }
-    int? CVC { get; set; }
+    int? CVV { get; set; }
     int? ZIP { get; set; }
 }
 ```
