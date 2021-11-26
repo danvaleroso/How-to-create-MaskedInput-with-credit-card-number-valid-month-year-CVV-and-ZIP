@@ -75,9 +75,7 @@ The main idea is to use multiple MaskedInputs for Card number, valid month/year,
 
 ## Files to Look At
 
-- link.cs (VB: link.vb)
-- link.js
-- ...
+- [Index.razor](./CS/BlazorServerApp/Pages/Index.razor)
 
 <!-- default file list end -->
 
