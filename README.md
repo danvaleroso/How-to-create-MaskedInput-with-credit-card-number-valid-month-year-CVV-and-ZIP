@@ -13,10 +13,10 @@ The main idea is to use multiple MaskedInputs for Card number, valid month/year,
 # Razor
 
 ```razor
-<div class="inputContainer" >
+<div class="container-input" >
     <div>
         <DxMaskedInput @bind-Value="@CardNumber"
-                       InputCssClass="no-border"
+                       InputCssClass="border-none"
                        Mask="0000 0000 0000 0000"
                        NullText="Card Number">
         </DxMaskedInput>
@@ -24,19 +24,19 @@ The main idea is to use multiple MaskedInputs for Card number, valid month/year,
     <div>
         <DxMaskedInput @bind-Value="@Date"
                        Mask="@DateTimeMaskValue"
-                       InputCssClass="no-border"
+                       InputCssClass="border-none"
                        NullText="MM/YY"
-                       CssClass="widthSm">
+                       CssClass="width-sm">
         </DxMaskedInput>
         <DxMaskedInput @bind-Value="@CVV"
-                       InputCssClass="no-border"
+                       InputCssClass="border-none"
                        Mask="000" 
-                       CssClass="widthSm"
+                       CssClass="width-sm"
                        NullText="CVV">
         </DxMaskedInput>
         <DxMaskedInput @bind-Value="@ZIP"
-                       InputCssClass="no-border"
-                       Mask="00000" CssClass="widthSm"
+                       InputCssClass="border-none"
+                       Mask="00000" CssClass="width-sm"
                        NullText="ZIP">
         </DxMaskedInput>
     </div>
@@ -45,7 +45,7 @@ The main idea is to use multiple MaskedInputs for Card number, valid month/year,
 @code {
     DateTime? Date { get; set; } = null;
     string DateTimeMaskValue = "MM/yy";
-    int? CardNumber { get; set; }
+    long? CardNumber { get; set; }
     int? CVV { get; set; }
     int? ZIP { get; set; }
 }
@@ -53,22 +53,25 @@ The main idea is to use multiple MaskedInputs for Card number, valid month/year,
 # CSS
 
 ```css
-.no-border {
-    border: 0 !important;
-    box-shadow: none !important; 
-}
-.inputContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 500px;
-    border: 2px solid black ;
-}
-    .inputContainer > div {
-        display: flex;
+    .border-none {
+        border: 0 !important;
+        box-shadow: none !important;
     }
-.widthSm {
-    width:75px;
-}
+    .container-input {
+        display: flex;
+        justify-content: space-between;
+        width: 500px;
+        border: 2px solid black ;
+    }
+        .container-input > div {
+            display: flex;
+        }
+    .width-sm {
+        width:75px;
+    }
+    .width-la {
+        width: 250px;
+    }
 ```
 
 <!-- default file list -->
