@@ -1,51 +1,50 @@
 ﻿@page "/"
 
 <style>
-    .no-border {
+    .border-none {
         border: 0 !important;
-        box-shadow: none !important; /* You may want to include this as bootstrap applies these styles too */
+        box-shadow: none !important;
     }
-    .inputContainer {
+    .container-input {
         display: flex;
         justify-content: space-between;
         width: 500px;
         border: 2px solid black ;
     }
-        .inputContainer > div {
+        .container-input > div {
             display: flex;
         }
-    .widthSm {
+    .width-sm {
         width:75px;
     }
-    .widthLa {
+    .width-la {
         width: 250px;
     }
 </style>
-<div class="inputContainer" >
+<div class="container-input" >
     <div>
         <DxMaskedInput @bind-Value="@CardNumber"
-                       InputCssClass="no-border"
+                       InputCssClass="border-none"
                        Mask="0000 0000 0000 0000"
-                       CssClass=""
                        NullText="Card Number">
         </DxMaskedInput>
     </div>
     <div>
         <DxMaskedInput @bind-Value="@Date"
                        Mask="@DateTimeMaskValue"
-                       InputCssClass="no-border"
+                       InputCssClass="border-none"
                        NullText="MM/YY"
-                       CssClass="widthSm">
+                       CssClass="width-sm">
         </DxMaskedInput>
         <DxMaskedInput @bind-Value="@CVV"
-                       InputCssClass="no-border"
+                       InputCssClass="border-none"
                        Mask="000" 
-                       CssClass="widthSm"
+                       CssClass="width-sm"
                        NullText="CVV">
         </DxMaskedInput>
         <DxMaskedInput @bind-Value="@ZIP"
-                       InputCssClass="no-border"
-                       Mask="00000" CssClass="widthSm"
+                       InputCssClass="border-none"
+                       Mask="00000" CssClass="width-sm"
                        NullText="ZIP">
         </DxMaskedInput>
     </div>
@@ -54,7 +53,7 @@
 @code {
     DateTime? Date { get; set; } = null;
     string DateTimeMaskValue = "MM/yy";
-    int? CardNumber { get; set; }
+    long? CardNumber { get; set; }
     int? CVV { get; set; }
     int? ZIP { get; set; }
 }
