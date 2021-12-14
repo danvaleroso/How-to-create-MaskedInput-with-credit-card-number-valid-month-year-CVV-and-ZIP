@@ -73,9 +73,6 @@ The main idea is to use multiple MaskedInputs for Card number, valid month/year 
     .width-sm {
         width:75px;
     }
-    .width-la {
-        width: 250px;
-    }
 ```
 
 <!-- default file list -->
