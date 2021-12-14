@@ -2,23 +2,24 @@
 A repository template for creating new examples.
 -->
 
-# MaskedInput for Blazor - How to create an input with credit card number, month/year, CVV and ZIP
+# MaskedInput for Blazor - How to create an input with credit card number, month/year and CVV
 
-Here is an example of how to use MaskedInput component to show a large input with credit card number, month/year, CVV and ZIP as shown below:
+Here is an example of how to use MaskedInput component to show a large input with credit card number, month/year and CVV as shown below:
 
 ![alt text](https://github.com/dlvaleroso98/How-to-create-MaskedInput-with-credit-card-number-valid-month-year-CVV-and-ZIP/blob/21.2.3%2B/sample.jpg)
 
-The main idea is to use multiple MaskedInputs for Card number, valid month/year, CVV and ZIP. Then remove their borders and put them inside a div container.
+The main idea is to use multiple MaskedInputs for Card number, valid month/year and CVV. Then remove their borders and put them inside a div container.
 
 # Razor
 
 ```razor
-<div class="container-input" >
+<div class="container-input">
     <div>
         <DxMaskedInput @bind-Value="@CardNumber"
                        InputCssClass="border-none"
-                       Mask="0000 0000 0000 0000"
+                       Mask="\d{4} \d{4} \d{4} \d{4}" MaskMode="MaskMode.RegEx"
                        NullText="Card Number">
+            <DxRegExMaskProperties PlaceholdersVisible="false"></DxRegExMaskProperties>
         </DxMaskedInput>
     </div>
     <div>
@@ -30,18 +31,22 @@ The main idea is to use multiple MaskedInputs for Card number, valid month/year,
         </DxMaskedInput>
         <DxMaskedInput @bind-Value="@CVV"
                        InputCssClass="border-none"
-                       Mask="000" 
+                       Mask="\d{3}" MaskMode="MaskMode.RegEx"
                        CssClass="width-sm"
                        NullText="CVV">
-        </DxMaskedInput>
-        <DxMaskedInput @bind-Value="@ZIP"
-                       InputCssClass="border-none"
-                       Mask="00000" CssClass="width-sm"
-                       NullText="ZIP">
+            <DxRegExMaskProperties PlaceholdersVisible="false"></DxRegExMaskProperties>
         </DxMaskedInput>
     </div>
 </div>
-
+<br />
+<div class="container-input">
+    <DxMaskedInput @bind-Value="@CardHolder" CssClass="w-100"
+                   InputCssClass="border-none"
+                   Mask="([A-Z]+ ?){1,3}" MaskMode="MaskMode.RegEx"
+                   NullText="HOLDER NAME">
+        <DxRegExMaskProperties PlaceholdersVisible="false"></DxRegExMaskProperties>
+    </DxMaskedInput>
+</div>
 @code {
     DateTime? Date { get; set; } = null;
     string DateTimeMaskValue = "MM/yy";
