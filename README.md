@@ -47,12 +47,11 @@ The main idea is to use multiple MaskedInputs for Card number, valid month/year 
         <DxRegExMaskProperties PlaceholdersVisible="false"></DxRegExMaskProperties>
     </DxMaskedInput>
 </div>
-@code {
-    DateTime? Date { get; set; } = null;
+@code { DateTime? Date { get; set; } = null;
     string DateTimeMaskValue = "MM/yy";
-    long? CardNumber { get; set; }
-    int? CVV { get; set; }
-    int? ZIP { get; set; }
+    string CardNumber { get; set; } = null;
+    string CVV { get; set; }
+    string CardHolder { get; set; }
 }
 ```
 # CSS
